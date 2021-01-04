@@ -252,7 +252,7 @@ void loop() {
           start_time = 0;
         }
         do{
-          http.begin(client, "http://xiti.gz01.bdysite.com/local_service_api.php?token=catch_switch_status&status=wait");//完成断开电源任务，使远程数据库标识复位为wait
+          http.begin(client, "http://api_url");//完成断开电源任务，使远程数据库标识复位为wait
           httpCode = http.GET();//返回访问状态
           if(httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY){
             response = http.getString();
